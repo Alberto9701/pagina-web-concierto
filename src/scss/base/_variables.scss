@@ -1,0 +1,28 @@
+// este archivo es llamado _variables.scss
+//ya que sass va a identificar este archivo como otro archivo
+// principal, aparte del app.scss, por eso
+//colocamos un guion bajo antes de el nombre
+
+// $rojo: red;
+
+
+
+//tipografia
+$fuente_principal: "Montserrat", sans-serif;
+
+
+//colores
+$verde: #4CB8B3;
+$rosa: #F53756;
+$amarillo: #FEF46D;
+$morado: #752F97;
+$negro: #000000;
+$blanco: #FFFFFF;
+
+//tamaños de media queries
+$telefono: 480px;
+$tablet: 768px;
+$desktop: 992px;
+$desktopXL: 1200px;
+
+

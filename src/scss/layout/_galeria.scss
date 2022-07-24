@@ -1,0 +1,64 @@
+@use "base/mixins" as m; 
+@use "base/variables" as v; 
+
+.galeria{
+    padding: 5rem 0;
+    h3{
+        text-align: center;
+    }
+
+    .galeria-imagenes{
+        @include m.resetear-lista;
+        @include m.grid(2,2rem);
+
+        @include m.telefono{
+            @include m.grid(3,2rem);
+        }
+
+        @include m.tablet{
+            @include m.grid(4,2rem);
+        }
+
+        @include m.desktop{
+            @include m.grid(6,2rem);
+        }
+
+    }
+}
+
+.overlay{
+    position: fixed; //pocisionando la imagen fijamente en un solo lugar
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%; //ampliando la imagen el overlay al maximo, el overlay va a funcionar como el fondo de nuestra imagen grande
+    height: 100%;
+
+    display: grid; //para centrar la imagen usaremos grid
+    place-items: center; // y centraremos horzontal y verticalmente
+
+    background-color: rgba(0,0,0,.5); //para la transparencia
+
+    picture{ //esta imagen inicialmente esta muy grande, gracias a que arriba pusimos el overlay al 100 por cientro, por ello modificaremos la imagen de la siguiente manera
+        display: block; //colocamos un display block para que funcione el max width
+        max-width: 80rem; //con esto modificamos y indicamos el valor que tendra nuestra imagen
+    }
+}
+
+//aplicamos estilo al boton de cerrar
+.btn-cerrar{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: v.$blanco;
+    color: v.$negro;
+    display: grid; //utilizamos grid para centrar la letra x
+    place-items: center;//ahora gracias a grid podemos usar place-items y posicionar la x en el centro
+    font-weight: 700;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}

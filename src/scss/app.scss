@@ -1,0 +1,27 @@
+//para llamar al archivo en dondde tenemos almacenadas
+//las variables, existen 2 formas, hay que aprendert
+//ambas formas, la anterior y la nueva
+
+//anterior
+//@import "base/variables";//no es necesario
+//agregar el guion bajo ni la extension scss
+//ya que sass ya tiene contemplado eso y pues lo omite
+// ademas, gracias a que usamos import, la variables de ese archivo
+//van a estar disponibles en todos los archivos
+//@import "contenido/contenido";
+
+
+//nueva
+//para la nueva, es necesario tener un archivo 
+//_index.scss en las carpetas de base y de contenido
+//y pues en los index usamos forward para apuntar a los
+//demas archivos que estan en la misma carpeta (ver los index)
+//Entonces ahora usamos use para importar la carpeta completa
+//por ejemplo
+@use "base"; //esto va a buscar automaticamente el archivo index_scss y pues el index
+// ya esta apuntando a los demas archivos de esa carpeta con la palabra reservada forward
+// @use "contenido";
+
+
+@use "layout";
+

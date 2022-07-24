@@ -1,0 +1,63 @@
+@use "base/variables" as v; 
+@use "base/mixins" as m; 
+
+.header{
+    background-color: v.$verde;
+
+    //apartir del tamaño de tablet se mostrara el efecto de la barra fija, para que no se vea mal en dispositivos moviles
+    @include m.tablet{
+        //aqui le decimos que cuando tenga la clase de fijo, tendra el siguiente codigo
+        &.fijo{
+            left: 0; // con left y top posicionamos la barra fija que hemos modificado en la parte de globlaes concretamente en body, en la clase body-scroll 
+            top: 0;
+            position: fixed; //posicion fija
+            width: 100%; //esta clase modifica el width, por lo que nuevament ponemos width al 100 % aqui
+            box-shadow: .1rem .2rem .3rem #333; //agregando sombra para que parezca que flota la barra
+        }
+    }
+
+    
+    h1{
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet{
+            margin: 0;
+        }
+    }
+    .contenido-header{
+        padding: 2rem;
+        @include m.tablet{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}
+
+.navegacion-principal{
+    @include m.tablet{
+        display:flex;
+        gap: 2rem;
+    }
+
+    a{
+        display: block;
+        text-align: center;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        @include m.tablet{
+            margin: 0;
+        }
+
+        //el amperson en sass elimina el espacio
+        //que por default sass le pone a las anidaciones
+        &:hover{
+            color: v.$amarillo;
+        }
+
+    }
+}
+
+
+
